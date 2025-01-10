@@ -88,7 +88,7 @@ def mc_control_incremental_mean(env, num_episodes, eps_decay=0.999, eps_min=0.05
     policy = {k: np.argmax(v) for k, v in Q.items()}
     return policy, Q
 
-def mc_control(env, num_episodes, alpha, gamma=1.0, eps_decay=0.999, eps_min=0.05):
+def mc_control_const_alpha(env, num_episodes, alpha, gamma=1.0, eps_decay=0.999, eps_min=0.05):
     nA = env.action_space.n
     Q = defaultdict(lambda: np.zeros(nA))
     epsilon = 1.0
@@ -160,7 +160,7 @@ def main():
     # Part 3: MC Control with Constant-alpha
     print("Part 3: MC Control with Constant-alpha")
     print("Running MC control with constant-alpha...")
-    policy_alpha, Q_alpha = mc_control(env, 500000, alpha=0.02)
+    policy_alpha, Q_alpha = mc_control_const_alpha(env, 500000, alpha=0.02)
     
     # Plot results
     V_alpha = dict((k, np.max(v)) for k, v in Q_alpha.items())
