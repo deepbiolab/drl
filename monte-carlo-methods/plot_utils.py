@@ -1,7 +1,5 @@
 import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
-from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 def plot_blackjack_values(V):
 
@@ -24,11 +22,11 @@ def plot_blackjack_values(V):
         ax.set_zlabel('State Value')
         ax.view_init(ax.elev, -120)
 
-    fig = plt.figure(figsize=(20, 20))
-    ax = fig.add_subplot(211, projection='3d')
+    fig = plt.figure(figsize=(20, 10))
+    ax = fig.add_subplot(121, projection='3d')
     ax.set_title('Usable Ace')
     get_figure(True, ax)
-    ax = fig.add_subplot(212, projection='3d')
+    ax = fig.add_subplot(122, projection='3d')
     ax.set_title('No Usable Ace')
     get_figure(False, ax)
     plt.show()
@@ -68,8 +66,8 @@ def plot_policy(policy):
         ax.grid(color='w', linestyle='-', linewidth=1)
 
         # Add color bar
-        divider = make_axes_locatable(ax)
-        cax = divider.append_axes("right", size="5%", pad=0.1)
+        pos = ax.get_position()
+        cax = fig.add_axes([pos.x1 + 0.02, pos.y0, 0.02, pos.height])
         cbar = plt.colorbar(surf, ticks=[0, 1], cax=cax)
         cbar.ax.set_yticklabels(['0 (STICK)', '1 (HIT)'])
 
