@@ -8,10 +8,14 @@ This repository contains implementations of various deep reinforcement learning 
 ```
 drl/
 ├── monte-carlo-methods/
-│   ├── monte_carlo.py         # Concise version
-│   ├── Monte_Carlo.ipynb      # Detailed version with illustration
-│   └── plot_utils.py          # Plotting utilities for visualizing results
-└── requirements.txt          # Project dependencies
+│   ├── monte_carlo_blackjack.py         # Monte Carlo methods implementation
+│   ├── monte_carlo_blackjack.ipynb      # Detailed notebook with illustrations
+│   └── plot_utils.py                    # Plotting utilities for visualizing results
+├── temporal-difference-methods/
+│   ├── temporal_difference_blackjack.py         # TD methods implementation
+│   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations
+│   └── plot_utils.py                            # Plotting utilities
+└── requirements.txt                             # Project dependencies
 ```
 
 ## Implemented Algorithms
@@ -31,6 +35,24 @@ Implementation of Monte Carlo (MC) algorithms using the Blackjack environment as
 3. **MC Control with Constant-$α$**
    - Fixed learning rate approach
    - Enhanced control over update process
+
+### Temporal Difference Methods
+Implementation of TD algorithms using the Blackjack environment:
+
+1. **SARSA (On-Policy TD Control)**
+   - State-Action-Reward-State-Action
+   - On-policy learning with epsilon-greedy exploration
+   - Episode-based updates with TD(0)
+
+2. **Q-Learning (Off-Policy TD Control)**
+   - Also known as SARSA-Max
+   - Off-policy learning using maximum action values
+   - Optimal action-value function approximation
+
+3. **Expected SARSA**
+   - Extension of SARSA using expected values
+   - More stable learning through action probability weighting
+   - Combines benefits of SARSA and Q-Learning
 
 ## Requirements
 
@@ -67,5 +89,7 @@ Or explore the detailed notebook:
 
 ## Future Work
 
-- Implementation of additional algorithms
+- Implementation of TD algorithms on CliffWalking problem
+
+    
 
