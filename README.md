@@ -12,10 +12,11 @@ drl/
 │   ├── monte_carlo_blackjack.ipynb      # Detailed notebook with illustrations
 │   └── plot_utils.py                    # Plotting utilities for visualizing results
 ├── temporal-difference-methods/
-│   ├── temporal_difference_blackjack.py         # TD methods implementation
+│   ├── temporal_difference_blackjack.py         # TD methods implementation for Blackjack
 │   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations
-│   └── plot_utils.py                            # Plotting utilities
-└── requirements.txt                             # Project dependencies
+│   ├── temporal_difference_cliffwalking.ipynb   # TD methods on CliffWalking environment
+│   └── plot_utils.py                           # Plotting utilities
+└── requirements.txt                            # Project dependencies
 ```
 
 ## Implemented Algorithms
@@ -37,7 +38,7 @@ Implementation of Monte Carlo (MC) algorithms using the Blackjack environment as
    - Enhanced control over update process
 
 ### Temporal Difference Methods
-Implementation of TD algorithms using the Blackjack environment:
+Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 1. **SARSA (On-Policy TD Control)**
    - State-Action-Reward-State-Action
@@ -54,6 +55,11 @@ Implementation of TD algorithms using the Blackjack environment:
    - More stable learning through action probability weighting
    - Combines benefits of SARSA and Q-Learning
 
+#### Environment Implementations
+
+- **Blackjack**: Classic card game environment for policy learning
+- **CliffWalking**: Grid-world navigation task with negative rewards and cliff hazards
+
 ## Requirements
 
 ```
@@ -68,7 +74,7 @@ plotly==5.24.1
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/drl.git
+git clone https://github.com/deepbiolab/drl.git
 cd drl
 ```
 
@@ -90,7 +96,7 @@ Or explore the detailed notebook:
 
 ## Future Work
 
-- Implementation of TD algorithms on CliffWalking problem
+- Comprehensive implementations of fundamental RL algorithms
 
     
 
