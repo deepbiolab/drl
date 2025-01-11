@@ -9,13 +9,13 @@ This repository contains implementations of various deep reinforcement learning 
 drl/
 ├── monte-carlo-methods/
 │   ├── monte_carlo_blackjack.py         # Monte Carlo methods implementation
-│   ├── monte_carlo_blackjack.ipynb      # Detailed notebook with illustrations
+│   ├── monte_carlo_blackjack.ipynb      # Detailed notebook with illustrations of MC Control
 │   └── plot_utils.py                    # Plotting utilities for visualizing results
 ├── temporal-difference-methods/
 │   ├── temporal_difference_blackjack.py         # TD methods implementation for Blackjack
-│   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations
-│   ├── temporal_difference_cliffwalking.ipynb   # TD methods on CliffWalking environment
-│   └── plot_utils.py                           # Plotting utilities
+│   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations of TD Control
+│   ├── temporal_difference_cliffwalking.ipynb   # TD methods performance analysis on CliffWalking task
+│   └── plot_utils.py                            # Plotting utilities
 └── requirements.txt                            # Project dependencies
 ```
 
