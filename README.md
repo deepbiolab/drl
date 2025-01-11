@@ -57,10 +57,11 @@ Implementation of TD algorithms using the Blackjack environment:
 ## Requirements
 
 ```
-python==3.10.x
 gymnasium==1.0.0
+ipython==8.12.3
 matplotlib==3.10.0
 numpy==2.2.1
+plotly==5.24.1
 ```
 
 ## Installation
