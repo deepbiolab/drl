@@ -97,6 +97,13 @@ Or explore the detailed notebook:
 ## Future Work
 
 - Comprehensive implementations of fundamental RL algorithms
+   - [ ] Deep Q-Network
+   - [ ] Hill Climbing
+   - [ ] REINFORCE
+   - [ ] A2C, A3C
+   - [ ] Proximal Policy Optimization
+   - [ ] Deep Deterministic Policy Gradients
+   - [ ] MCTS, AlphaZero
 
     
 
