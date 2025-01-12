@@ -8,15 +8,15 @@ This repository contains implementations of various deep reinforcement learning 
 ```
 drl/
 ├── monte-carlo-methods/
-│   ├── monte_carlo_blackjack.py         # Monte Carlo methods implementation
 │   ├── monte_carlo_blackjack.ipynb      # Detailed notebook with illustrations of MC Control
+│   ├── monte_carlo_blackjack.py         # Monte Carlo methods implementation
 │   └── plot_utils.py                    # Plotting utilities for visualizing results
 ├── temporal-difference-methods/
-│   ├── temporal_difference_blackjack.py         # TD methods implementation for Blackjack
 │   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations of TD Control
 │   ├── temporal_difference_cliffwalking.ipynb   # TD methods performance analysis on CliffWalking task
+│   ├── temporal_difference_blackjack.py         # TD methods implementation for Blackjack
 │   └── plot_utils.py                            # Plotting utilities
-├── labs/																 # 
+├── labs/																 # playground of some tasks
 └── requirements.txt                            # Project dependencies
 ```
 
@@ -60,7 +60,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
 - **[CliffWalking](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/cliffwalking.py)**: Grid-world navigation task with negative rewards and cliff hazards
-- Taxi-v3: Grid-world transportation task where an agent learns to efficiently navigate, pick up and deliver passengers to designated locations while optimizing rewards.
+- **[Taxi-v3](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/taxi.py)**: Grid-world transportation task where an agent learns to efficiently navigate, pick up and deliver passengers to designated locations while optimizing rewards.
 
 ## Requirements
 
