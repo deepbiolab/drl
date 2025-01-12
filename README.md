@@ -53,7 +53,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Exploration of the impact of discretization granularity on learning performance
 
 
-## Environments brief
+## Environments Brief
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
 - **[CliffWalking](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/cliffwalking.py)**: Grid-world navigation task with negative rewards and cliff hazards
