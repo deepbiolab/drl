@@ -5,58 +5,43 @@ This repository contains implementations of various deep reinforcement learning 
 
 ## Project Structure
 
-```
-drl/
-├── monte-carlo-methods/
-│   ├── monte_carlo_blackjack.ipynb      # Detailed notebook with illustrations of MC Control
-│   ├── monte_carlo_blackjack.py         # Monte Carlo methods implementation
-│   └── plot_utils.py                    # Plotting utilities for visualizing results
-├── temporal-difference-methods/
-│   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations of TD Control
-│   ├── temporal_difference_cliffwalking.ipynb   # TD methods performance analysis on CliffWalking task
-│   ├── temporal_difference_blackjack.py         # TD methods implementation for Blackjack
-│   └── plot_utils.py                            # Plotting utilities
-├── labs/																 # playground of some tasks
-└── requirements.txt                            # Project dependencies
-```
+### Model Free Learning
 
-## Implemented Algorithms
-
-### Monte Carlo Methods
+#### Monte Carlo Methods
 Implementation of Monte Carlo (MC) algorithms using the Blackjack environment as an example:
 
-1. **MC Prediction**
+1. **[MC Prediction](model-free-learning/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - First-visit MC prediction for estimating action-value function
    - Policy evaluation with stochastic limit policy
 
-2. **MC Control with Incremental Mean**
+2. **[MC Control with Incremental Mean](model-free-learning/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - GLIE (Greedy in the Limit with Infinite Exploration)
    - Epsilon-greedy policy implementation
    - Incremental mean updates
 
-3. **MC Control with Constant-$α$**
+3. **[MC Control with Constant-alpha](model-free-learning/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - Fixed learning rate approach
    - Enhanced control over update process
 
-### Temporal Difference Methods
+#### Temporal Difference Methods
 Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
-1. **SARSA (On-Policy TD Control)**
+1. **[SARSA (On-Policy TD Control)](model-free-learning/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - State-Action-Reward-State-Action
    - On-policy learning with epsilon-greedy exploration
    - Episode-based updates with TD(0)
 
-2. **Q-Learning (Off-Policy TD Control)**
+2. **[Q-Learning (Off-Policy TD Control)](model-free-learning/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - Also known as SARSA-Max
    - Off-policy learning using maximum action values
    - Optimal action-value function approximation
 
-3. **Expected SARSA**
+3. **[Expected SARSA](model-free-learning/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - Extension of SARSA using expected values
    - More stable learning through action probability weighting
    - Combines benefits of SARSA and Q-Learning
 
-#### Environment Implementations
+## Environment Implementations
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
 - **[CliffWalking](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/cliffwalking.py)**: Grid-world navigation task with negative rewards and cliff hazards
