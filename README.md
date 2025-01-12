@@ -43,6 +43,16 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - More stable learning through action probability weighting
    - Combines benefits of SARSA and Q-Learning
 
+
+#### Continuous Problems
+##### Discretization
+
+1. **[Q-Learning (Off-Policy TD Control)](model-free-learning/continuous-problems/discretization/discretization_mountaincar.ipynb)**
+   - Q-Learning to the MountainCar environment using discretized state spaces
+   - State space discretization through uniform grid representation for continuous variables
+   - Exploration of the impact of discretization granularity on learning performance
+
+
 ## Environment Implementations
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
