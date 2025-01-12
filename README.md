@@ -16,6 +16,7 @@ drl/
 │   ├── temporal_difference_blackjack.ipynb      # Detailed notebook with illustrations of TD Control
 │   ├── temporal_difference_cliffwalking.ipynb   # TD methods performance analysis on CliffWalking task
 │   └── plot_utils.py                            # Plotting utilities
+├── labs/																 # 
 └── requirements.txt                            # Project dependencies
 ```
 
@@ -57,8 +58,9 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 #### Environment Implementations
 
-- **Blackjack**: Classic card game environment for policy learning
-- **CliffWalking**: Grid-world navigation task with negative rewards and cliff hazards
+- **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
+- **[CliffWalking](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/cliffwalking.py)**: Grid-world navigation task with negative rewards and cliff hazards
+- Taxi-v3: Grid-world transportation task where an agent learns to efficiently navigate, pick up and deliver passengers to designated locations while optimizing rewards.
 
 ## Requirements
 

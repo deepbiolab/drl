@@ -1,31 +1,71 @@
-# Taxi Problem
+# Taxi-v3 Environment Solution using Q-Learning
 
-### Getting Started
+## Project Overview
+This project implements a Q-Learning solution for the Taxi-v3 environment from OpenAI Gym (maintained by Gymnasium). The goal is to train a taxi agent to navigate in a grid world, picking up and dropping off passengers at designated locations.
 
-Read the description of the environment in subsection 3.1 of [this paper](https://arxiv.org/pdf/cs/9905014.pdf).  You can verify that the description in the paper matches the OpenAI Gym environment by peeking at the code [here](https://github.com/openai/gym/blob/master/gym/envs/toy_text/taxi.py).
+## Environment Description
+The Taxi-v3 environment represents a 5x5 grid world where a taxi needs to navigate to pick up passengers from one location and drop them off at another. The state space consists of 500 possible states (25 taxi positions × 5 passenger locations × 4 destination locations).
 
+### State Space
+- Taxi location (25 possible positions)
+- Passenger location (5 possible locations - 4 designated locations + taxi)
+- Destination location (4 possible locations)
 
-### Instructions
+### Action Space
+The agent can perform 6 actions:
+- 0: Move South
+- 1: Move North
+- 2: Move East
+- 3: Move West
+- 4: Pickup passenger
+- 5: Drop off passenger
 
-The repository contains three files:
-- `agent.py`: Develop your reinforcement learning agent here.  This is the only file that you should modify.
-- `monitor.py`: The `interact` function tests how well your agent learns from interaction with the environment.
-- `main.py`: Run this file in the terminal to check the performance of your agent.
+### Rewards
+- -1 per step
+- +20 for successful drop-off
+- -10 for illegal pickup/drop-off actions
 
-Begin by running the following command in the terminal:
+## Implementation Details
+
+### Project Structure
+The repository contains three main Python files:
+- `agent.py`: Contains the Q-Learning agent implementation
+- `monitor.py`: Handles the environment interaction and performance monitoring
+- `main.py`: Entry point for running experiments
+
+### Agent Implementation
+The agent uses Q-Learning with the following features:
+- Epsilon-greedy exploration strategy with decay
+- Learning rate (alpha) optimization
+- Gamma (discount factor) set to 1.0
+- Dynamic exploration-exploitation balance
+
+## Running the Code
+
+### Prerequisites
+
+**Test on `Python 3.10.x`**
+
+```bash
+pip install gymnasium
+pip install numpy
+pip install matplotlib
 ```
+
+### Basic Usage
+To run a single training session:
+```bash
 python main.py
 ```
 
-When you run `main.py`, the agent that you specify in `agent.py` interacts with the environment for 20,000 episodes.  The details of the interaction are specified in `monitor.py`, which returns two variables: `avg_rewards` and `best_avg_reward`.
-- `avg_rewards` is a deque where `avg_rewards[i]` is the average (undiscounted) return collected by the agent from episodes `i+1` to episode `i+100`, inclusive.  So, for instance, `avg_rewards[0]` is the average return collected by the agent over the first 100 episodes.
-- `best_avg_reward` is the largest entry in `avg_rewards`.  This is the final score that you should use when determining how well your agent performed in the task.
+## Performance Metrics
+- Episodes to convergence
+- Final average reward
+- Best average reward
+- Stability of learning
 
-Your assignment is to modify the `agents.py` file to improve the agent's performance.
-- Use the `__init__()` method to define any needed instance variables.  Currently, we define the number of actions available to the agent (`nA`) and initialize the action values (`Q`) to an empty dictionary of arrays.  Feel free to add more instance variables; for example, you may find it useful to define the value of epsilon if the agent uses an epsilon-greedy policy for selecting actions.
-- The `select_action()` method accepts the environment state as input and returns the agent's choice of action.  The default code that we have provided randomly selects an action.
-- The `step()` method accepts a (`state`, `action`, `reward`, `next_state`) tuple as input, along with the `done` variable, which is `True` if the episode has ended.  The default code (which you should certainly change!) increments the action value of the previous state-action pair by 1.  You should change this method to use the sampled tuple of experience to update the agent's knowledge of the problem.
+## References
+- [Original Paper](https://arxiv.org/pdf/cs/9905014.pdf)
+- [OpenAI Gym Taxi-v3](https://gymnasium.farama.org/environments/toy_text/taxi/)
+- [Q-Learning Algorithm](https://link.springer.com/article/10.1007/BF00992698)
 
-Once you have modified the function, you need only run `python main.py` to test your new agent.
-
-OpenAI Gym [defines "solving"](https://gym.openai.com/envs/Taxi-v1/) this task as getting average return of 9.7 over 100 consecutive trials.  
