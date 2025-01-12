@@ -7,36 +7,38 @@ This repository contains implementations of various deep reinforcement learning 
 
 ### Model Free Learning
 
-#### Monte Carlo Methods
+#### Discrete Problems
+
+##### Monte Carlo Methods
 Implementation of Monte Carlo (MC) algorithms using the Blackjack environment as an example:
 
-1. **[MC Prediction](model-free-learning/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
+1. **[MC Prediction](model-free-learning/discrete-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - First-visit MC prediction for estimating action-value function
    - Policy evaluation with stochastic limit policy
 
-2. **[MC Control with Incremental Mean](model-free-learning/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
+2. **[MC Control with Incremental Mean](model-free-learning/discrete-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - GLIE (Greedy in the Limit with Infinite Exploration)
    - Epsilon-greedy policy implementation
    - Incremental mean updates
 
-3. **[MC Control with Constant-alpha](model-free-learning/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
+3. **[MC Control with Constant-alpha](model-free-learning/discrete-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - Fixed learning rate approach
    - Enhanced control over update process
 
-#### Temporal Difference Methods
+##### Temporal Difference Methods
 Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
-1. **[SARSA (On-Policy TD Control)](model-free-learning/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
+1. **[SARSA (On-Policy TD Control)](model-free-learning/discrete-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - State-Action-Reward-State-Action
    - On-policy learning with epsilon-greedy exploration
    - Episode-based updates with TD(0)
 
-2. **[Q-Learning (Off-Policy TD Control)](model-free-learning/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
+2. **[Q-Learning (Off-Policy TD Control)](model-free-learning/discrete-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - Also known as SARSA-Max
    - Off-policy learning using maximum action values
    - Optimal action-value function approximation
 
-3. **[Expected SARSA](model-free-learning/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
+3. **[Expected SARSA](model-free-learning/discrete-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - Extension of SARSA using expected values
    - More stable learning through action probability weighting
    - Combines benefits of SARSA and Q-Learning
