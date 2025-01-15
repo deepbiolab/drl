@@ -5,6 +5,8 @@ This repository contains implementations of various deep reinforcement learning 
 
 ## Project Structure
 
+> It is recommended to follow the material in the given order.
+
 ### Model Free Learning
 
 #### Discrete Problems
