@@ -69,7 +69,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 ## Requirements
 
-Create (and activate) a new environment with Python 3.10.
+Create (and activate) a new environment with `Python 3.10` and `PyTorch 2.0.1`
 
 - **Linux** or **Mac**: 
 
