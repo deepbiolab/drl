@@ -59,6 +59,16 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Tile coding as a method to efficiently represent continuous state spaces by overlapping feature grids
 
 
+### Model Based Learning
+
+#### Value Based Iteration
+
+1. **[DQN with Experience Replay](./model-based-learning/value-iteration/deep_q_network.ipynb)**
+   - A neural network is used to approximate the Q-value function $ Q(s, a) $.
+   - Breaks the temporal correlation of samples by randomly sampling from a replay buffer.
+   - Periodically updates the target network's parameters to reduce instability in target value estimation.
+
+
 ## Environments Brief
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
@@ -66,6 +76,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 - **[Taxi-v3](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/taxi.py)**: Grid-world transportation task where an agent learns to efficiently navigate, pick up and deliver passengers to designated locations while optimizing rewards.
 - **[MountainCar](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/classic_control/mountain_car.py)**: Continuous control task where an underpowered car must learn to build momentum by moving back and forth to overcome a steep hill and reach the goal position.
 - **[Acrobot](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/classic_control/acrobot.py)**: A two-link robotic arm environment where the goal is to swing the end of the second link above a target height by applying torque at the actuated joint. It challenges agents to solve nonlinear dynamics and coordinate the motion of linked components efficiently.
+- **[LunarLander](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/box2d/lunar_lander.py)**: A physics-based environment where an agent controls a lunar lander to safely land on a designated pad. The task involves managing fuel consumption, balancing thrust, and handling the dynamics of gravity and inertia.
 
 ## Requirements
 
