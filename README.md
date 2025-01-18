@@ -119,16 +119,26 @@ Or explore the detailed notebook:
 ## Future Work
 
 - Comprehensive implementations of fundamental RL algorithms
-   - [x] Q-Learning
-   - [x] SARSA
-   - [x] Monte-Carlo Control
-   - [x] Deep Q-Network
-   - [X] Double DQN
+   - [x] [MC Control (Monte-Carlo Control)](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [MC Control with Incremental Mean](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [MC Control with Constant-alpha](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [SARSA](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [SARSA Max (Q-Learning)](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [Expected SARSA](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [Q-learning with Uniform Discretization](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [Q-learning with Tile Coding Discretization](http://incompleteideas.net/book/RLbook2020.pdf)
+   - [x] [DQN (Deep Q-Network with Experience Replay)](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+   - [X] [DDQN (Double DQN)](https://arxiv.org/pdf/1509.06461)
+   - [ ] [Prioritized DDQN(Double DQN with Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952)
+   - [ ] [Dueling DDQN (Dueling Double DQN)](https://arxiv.org/pdf/1511.06581)
+   - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [ ] Hill Climbing
+   - [ ] Cross Entropy Method
    - [ ] REINFORCE
-   - [ ] A2C, A3C
-   - [ ] Proximal Policy Optimization
-   - [ ] Deep Deterministic Policy Gradients
+   - [ ] A2C
+   - [ ] A3C
+   - [ ] PPO
+   - [ ] DDPG
    - [ ] MCTS, AlphaZero
 
     
