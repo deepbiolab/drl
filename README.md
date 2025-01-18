@@ -63,6 +63,8 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 #### Value Based Iteration
 
+##### Deep Q Networks Series
+
 1. **[Deep Q Network with Experience Replay](./model-based-learning/value-iteration/deep-q-networks/vanilla_dqn_lunarlander.ipynb)**
    - A neural network is used to approximate the Q-value function $ Q(s, a) $.
    - Breaks the temporal correlation of samples by randomly sampling from a replay buffer.
