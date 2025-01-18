@@ -67,9 +67,11 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - A neural network is used to approximate the Q-value function $ Q(s, a) $.
    - Breaks the temporal correlation of samples by randomly sampling from a replay buffer.
    - Periodically updates the target network's parameters to reduce instability in target value estimation.
+2. **[Double Deep Q Network with Experience Replay](./model-based-learning/value-iteration/double_deep_q_network_lunarlander.ipynb)**
+   - Addresses the overestimation bias in vanilla DQN by decoupling action selection and evaluation:
+   - This decoupling helps stabilize training and improves the accuracy of Q-value estimates.
 
-
-## Environments Brief
+## Environments Brief in This Project
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
 - **[CliffWalking](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/cliffwalking.py)**: Grid-world navigation task with negative rewards and cliff hazards
@@ -121,6 +123,7 @@ Or explore the detailed notebook:
    - [x] SARSA
    - [x] Monte-Carlo Control
    - [x] Deep Q-Network
+   - [X] Double DQN
    - [ ] Hill Climbing
    - [ ] REINFORCE
    - [ ] A2C, A3C
