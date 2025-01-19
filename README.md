@@ -66,7 +66,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 ##### Deep Q Networks Series
 
 1. **[Deep Q Network with Experience Replay](./model-based-learning/value-iteration/deep-q-networks/vanilla_dqn_lunarlander.ipynb)**
-   - A neural network is used to approximate the Q-value function $ Q(s, a) $.
+   - A neural network is used to approximate the Q-value function $Q(s, a)$.
    - Breaks the temporal correlation of samples by randomly sampling from a replay buffer.
    - Periodically updates the target network's parameters to reduce instability in target value estimation.
 2. **[Double Deep Q Network with Experience Replay](./model-based-learning/value-iteration/deep-q-networks/double_dqn_lunarlander.ipynb)**
@@ -76,9 +76,9 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Enhances the efficiency of experience replay by prioritizing transitions with higher temporal-difference (TD) errors.  
    - Combines the stability of Double DQN with prioritized sampling to focus on more informative experiences.
 4. **[Dueling Double Deep Q Network (Dueling DDQN)](./model-based-learning/value-iteration/deep-q-networks/dueling_ddqn_lunarlander.ipynb)**
-   - Introduces a new architecture that separates the estimation of **state value** $ V(s) $ and **advantage function** $ A(s, a) 
-   - Improves learning efficiency by explicitly modeling the state value $ V(s) $, which captures the overall "desirability" of a 
-   - Works particularly well in environments where some actions are redundant or where the state value $ V(s) $ plays a dominant role in decision-making.
+   - Introduces a new architecture that separates the estimation of **state value** $V(s)$ and **advantage function** $A(s, a)$
+   - Improves learning efficiency by explicitly modeling the state value $V(s)$, which captures the overall "desirability" of a 
+   - Works particularly well in environments where some actions are redundant or where the state value $V(s)$ plays a dominant role in decision-making.
 
 
 ## Environments Brief in This Project
