@@ -72,6 +72,9 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 2. **[Double Deep Q Network with Experience Replay](./model-based-learning/value-iteration/deep-q-networks/double_dqn_lunarlander.ipynb)**
    - Addresses the overestimation bias in vanilla DQN by decoupling action selection and evaluation:
    - This decoupling helps stabilize training and improves the accuracy of Q-value estimates.
+3. **[Prioritized Double Deep Q Network (Prioritized DDQN)](./model-based-learning/value-iteration/deep-q-networks/prioritized_ddqn_lunarlander.ipynb)**  
+   - Enhances the efficiency of experience replay by prioritizing transitions with higher temporal-difference (TD) errors.  
+   - Combines the stability of Double DQN with prioritized sampling to focus on more informative experiences.  
 
 ## Environments Brief in This Project
 
@@ -130,8 +133,8 @@ Or explore the detailed notebook:
    - [x] [Q-learning with Uniform Discretization](http://incompleteideas.net/book/RLbook2020.pdf)
    - [x] [Q-learning with Tile Coding Discretization](http://incompleteideas.net/book/RLbook2020.pdf)
    - [x] [DQN (Deep Q-Network with Experience Replay)](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
-   - [X] [DDQN (Double DQN)](https://arxiv.org/pdf/1509.06461)
-   - [ ] [Prioritized DDQN(Double DQN with Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952)
+   - [x] [DDQN (Double DQN)](https://arxiv.org/pdf/1509.06461)
+   - [x] [Prioritized DDQN(Double DQN with Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952)
    - [ ] [Dueling DDQN (Dueling Double DQN)](https://arxiv.org/pdf/1511.06581)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [ ] Hill Climbing
