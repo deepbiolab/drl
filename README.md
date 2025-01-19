@@ -74,7 +74,12 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - This decoupling helps stabilize training and improves the accuracy of Q-value estimates.
 3. **[Prioritized Double Deep Q Network (Prioritized DDQN)](./model-based-learning/value-iteration/deep-q-networks/prioritized_ddqn_lunarlander.ipynb)**  
    - Enhances the efficiency of experience replay by prioritizing transitions with higher temporal-difference (TD) errors.  
-   - Combines the stability of Double DQN with prioritized sampling to focus on more informative experiences.  
+   - Combines the stability of Double DQN with prioritized sampling to focus on more informative experiences.
+4. **[Dueling Double Deep Q Network (Dueling DDQN)](./model-based-learning/value-iteration/deep-q-networks/dueling_ddqn_lunarlander.ipynb)**
+   - Introduces a new architecture that separates the estimation of **state value** $ V(s) $ and **advantage function** $ A(s, a) 
+   - Improves learning efficiency by explicitly modeling the state value $ V(s) $, which captures the overall "desirability" of a 
+   - Works particularly well in environments where some actions are redundant or where the state value $ V(s) $ plays a dominant role in decision-making.
+
 
 ## Environments Brief in This Project
 
@@ -135,7 +140,7 @@ Or explore the detailed notebook:
    - [x] [DQN (Deep Q-Network with Experience Replay)](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
    - [x] [DDQN (Double DQN)](https://arxiv.org/pdf/1509.06461)
    - [x] [Prioritized DDQN(Double DQN with Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952)
-   - [ ] [Dueling DDQN (Dueling Double DQN)](https://arxiv.org/pdf/1511.06581)
+   - [x] [Dueling DDQN (Dueling Double DQN)](https://arxiv.org/pdf/1511.06581)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [ ] Hill Climbing
    - [ ] Cross Entropy Method
