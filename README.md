@@ -137,10 +137,10 @@ Or explore the detailed notebook:
    - [x] [Expected SARSA](http://incompleteideas.net/book/RLbook2020.pdf)
    - [x] [Q-learning with Uniform Discretization](http://incompleteideas.net/book/RLbook2020.pdf)
    - [x] [Q-learning with Tile Coding Discretization](http://incompleteideas.net/book/RLbook2020.pdf)
-   - [x] [DQN (Deep Q-Network with Experience Replay)](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
-   - [x] [DDQN (Double DQN)](https://arxiv.org/pdf/1509.06461)
-   - [x] [Prioritized DDQN(Double DQN with Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952)
-   - [x] [Dueling DDQN (Dueling Double DQN)](https://arxiv.org/pdf/1511.06581)
+   - [x] [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+   - [x] [DDQN](https://arxiv.org/pdf/1509.06461)
+   - [x] [Prioritized DDQN](https://arxiv.org/pdf/1511.05952)
+   - [x] [Dueling DDQN](https://arxiv.org/pdf/1511.06581)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [ ] Hill Climbing
    - [ ] Cross Entropy Method
