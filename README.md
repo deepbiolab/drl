@@ -146,7 +146,7 @@ Or explore the detailed notebook:
    - [ ] Cross Entropy Method
    - [ ] REINFORCE
    - [ ] A2C
-   - [ ] A3C
+   - [ ] [A3C](https://arxiv.org/pdf/1602.01783)
    - [ ] PPO
    - [ ] DDPG
    - [ ] MCTS, AlphaZero
