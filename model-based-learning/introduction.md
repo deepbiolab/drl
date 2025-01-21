@@ -52,4 +52,17 @@ Our objective is to determine appropriate values for the network weights such th
 
 This is an iterative process. Initially, the weights are set to random values. As the agent interacts with the environment and learns how to better optimize its reward strategy, it adjusts these weights. Over time, as the weights are updated, the agent begins to select more appropriate actions for each state and eventually masters the task.
 
-Traditional value-based methods and model-free learning approaches often assume a discrete action space, limiting their application in environments with continuous actions. However, policy-based methods, overcome this limitation by directly parameterizing and optimizing the policy. These methods can handle continuous action spaces naturally, as the neural network outputs parameters (e.g., mean and variance) of a probability distribution, from which actions are sampled. This flexibility makes policy-based methods ideal for environments like robotics or control tasks, where actions are inherently continuous, enabling more efficient learning and decision-making.
+### Three Key Advantages of Policy-Based Methods
+
+1. **Simplicity and Generalization**  
+   - Policy-based methods directly address the problem of finding the optimal policy without relying on a value function as an intermediate step.  
+   - They avoid storing unnecessary data and enable **generalization** across the state space, focusing on complex regions.
+
+2. **Ability to Learn Stochastic Policies**  
+   - Policy-based methods can learn true **stochastic policies**, which are essential for scenarios requiring randomness or handling **aliased states** (states that appear identical but are actually different).  
+   - Unlike value-based methods with "ε-greedy" approaches, policy-based methods are more efficient and avoid oscillation or inefficient action selection.
+
+3. **Suitability for Continuous Action Spaces**  
+   - In continuous or high-dimensional action spaces, value-based methods require solving an optimization problem to select actions, which is computationally expensive.  
+   - Policy-based methods map states directly to actions, significantly reducing computation time and making them ideal for complex scenarios.
+
