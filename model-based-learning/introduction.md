@@ -42,7 +42,7 @@ However, the question now arises:
 
 The answer is **yes**, and we can achieve this through a class of algorithms known as **[Policy-Based Methods](./policy-iteration/)**.
 
-### Policy Function Approximation
+### Policy Networks for Both Continuous State/Action Spaces
 
 First, let us consider how to estimate an optimal policy. Using the **CartPole** example, the agent has two possible actions: it can push the cart either to the left or to the right. At each time step, the agent selects one action from these two options.
 
@@ -51,3 +51,5 @@ We can construct a neural network to approximate the policy. This network takes 
 Our objective is to determine appropriate values for the network weights such that, for each state input to the network, it outputs an action probability distribution where the optimal action is most likely to be selected. This helps the agent achieve its goal of **maximizing the expected return**.
 
 This is an iterative process. Initially, the weights are set to random values. As the agent interacts with the environment and learns how to better optimize its reward strategy, it adjusts these weights. Over time, as the weights are updated, the agent begins to select more appropriate actions for each state and eventually masters the task.
+
+Traditional value-based methods and model-free learning approaches often assume a discrete action space, limiting their application in environments with continuous actions. However, policy-based methods, overcome this limitation by directly parameterizing and optimizing the policy. These methods can handle continuous action spaces naturally, as the neural network outputs parameters (e.g., mean and variance) of a probability distribution, from which actions are sampled. This flexibility makes policy-based methods ideal for environments like robotics or control tasks, where actions are inherently continuous, enabling more efficient learning and decision-making.
