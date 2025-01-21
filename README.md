@@ -9,52 +9,54 @@ This repository contains implementations of various deep reinforcement learning 
 
 ### Model Free Learning
 
-#### Discrete Problems
+#### Discrete State Problems
 
 ##### Monte Carlo Methods
 Implementation of Monte Carlo (MC) algorithms using the Blackjack environment as an example:
 
-1. **[MC Prediction](model-free-learning/discrete-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
+1. **[MC Prediction](model-free-learning/discrete-state-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - First-visit MC prediction for estimating action-value function
    - Policy evaluation with stochastic limit policy
 
-2. **[MC Control with Incremental Mean](model-free-learning/discrete-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
+2. **[MC Control with Incremental Mean](model-free-learning/discrete-state-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - GLIE (Greedy in the Limit with Infinite Exploration)
    - Epsilon-greedy policy implementation
    - Incremental mean updates
 
-3. **[MC Control with Constant-alpha](model-free-learning/discrete-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
+3. **[MC Control with Constant-alpha](model-free-learning/discrete-state-problems/monte-carlo-methods/monte_carlo_blackjack.ipynb)**
    - Fixed learning rate approach
    - Enhanced control over update process
 
 ##### Temporal Difference Methods
 Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
-1. **[SARSA (On-Policy TD Control)](model-free-learning/discrete-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
+1. **[SARSA (On-Policy TD Control)](model-free-learning/discrete-state-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - State-Action-Reward-State-Action
    - On-policy learning with epsilon-greedy exploration
    - Episode-based updates with TD(0)
 
-2. **[Q-Learning (Off-Policy TD Control)](model-free-learning/discrete-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
+2. **[Q-Learning (Off-Policy TD Control)](model-free-learning/discrete-state-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - Also known as SARSA-Max
    - Off-policy learning using maximum action values
    - Optimal action-value function approximation
 
-3. **[Expected SARSA](model-free-learning/discrete-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
+3. **[Expected SARSA](model-free-learning/discrete-state-problems/temporal-difference-methods/temporal_difference_blackjack.ipynb)**
    - Extension of SARSA using expected values
    - More stable learning through action probability weighting
    - Combines benefits of SARSA and Q-Learning
 
 
-#### Continuous Problems
-##### Discretization
+#### Continuous State Problems
+##### Uniform Discretization
 
-1. **[Q-Learning (Off-Policy TD Control)](model-free-learning/continuous-problems/discretization/discretization_mountaincar.ipynb)**
+1. **[Q-Learning (Off-Policy TD Control)](model-free-learning/continuous-state-problems/uniform-discretization/discretization_mountaincar.ipynb)**
    - Q-Learning to the MountainCar environment using discretized state spaces
    - State space discretization through uniform grid representation for continuous variables
    - Exploration of the impact of discretization granularity on learning performance
 
-2. **[Q-Learning (Off-Policy TD Control) with Tile Coding](model-free-learning/continuous-problems/discretization/tiling_discretization_acrobot.ipynb)**
+##### Tile Coding Discretization
+
+1. **[Q-Learning (Off-Policy TD Control) with Tile Coding](model-free-learning/continuous-state-problems/tiling-discretization/tiling_discretization_acrobot.ipynb)**
    - Q-Learning applied to the Acrobot environment using tile coding for state space representation
    - Tile coding as a method to efficiently represent continuous state spaces by overlapping feature grids
 
@@ -63,19 +65,22 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 #### Value Based Iteration
 
-##### Deep Q Networks Series
+##### Vanilla Deep Q Network
 
 1. **[Deep Q Network with Experience Replay (DQN)](./model-based-learning/value-iteration/vanilla-dqn/dqn_lunarlander.ipynb)**
    - A neural network is used to approximate the Q-value function $Q(s, a)$.
    - Breaks the temporal correlation of samples by randomly sampling from a replay buffer.
    - Periodically updates the target network's parameters to reduce instability in target value estimation.
-2. **[Double Deep Q Network with Experience Replay (DDQN)](./model-based-learning/value-iteration/variants-dqn/double_dqn_lunarlander.ipynb)**
+
+##### Variants of Deep Q Network
+
+1. **[Double Deep Q Network with Experience Replay (DDQN)](./model-based-learning/value-iteration/variants-dqn/double_dqn_lunarlander.ipynb)**
    - Addresses the overestimation bias in vanilla DQN by decoupling action selection and evaluation.
    - This decoupling helps stabilize training and improves the accuracy of Q-value estimates.
-3. **[Prioritized Double Deep Q Network (Prioritized DDQN)](./model-based-learning/value-iteration/variants-dqn/prioritized_ddqn_lunarlander.ipynb)**  
+2. **[Prioritized Double Deep Q Network (Prioritized DDQN)](./model-based-learning/value-iteration/variants-dqn/prioritized_ddqn_lunarlander.ipynb)**  
    - Enhances the efficiency of experience replay by prioritizing transitions with higher temporal-difference (TD) errors.  
    - Combines the stability of Double DQN with prioritized sampling to focus on more informative experiences.
-4. **[Dueling Double Deep Q Network (Dueling DDQN)](./model-based-learning/value-iteration/variants-dqn/dueling_ddqn_lunarlander.ipynb)**
+3. **[Dueling Double Deep Q Network (Dueling DDQN)](./model-based-learning/value-iteration/variants-dqn/dueling_ddqn_lunarlander.ipynb)**
    - Introduces a new architecture that separates the estimation of **state value** $V(s)$ and **advantage function** $A(s, a)$
    - Improves learning efficiency by explicitly modeling the state value $V(s)$, which captures the overall "desirability" of actions 
    - Works particularly well in environments where some actions are redundant or where the state value $V(s)$ plays a dominant role in decision-making.

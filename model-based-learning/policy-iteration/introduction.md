@@ -42,6 +42,8 @@ However, the question now arises:
 
 The answer is **yes**, and we can achieve this through a class of algorithms known as **Policy-Based Methods**.
 
+### Policy Function Approximation
+
 First, let us consider how to estimate an optimal policy. Using the **CartPole** example, the agent has two possible actions: it can push the cart either to the left or to the right. At each time step, the agent selects one action from these two options.
 
 We can construct a neural network to approximate the policy. This network takes the state as input and outputs the probabilities of the agent selecting each possible action. If there are two possible actions, the output layer will consist of two nodes. The agent uses this policy to interact with the environment by passing the most recent state into the network. The network outputs the action probabilities, and the agent samples from these probabilities to select an action. For instance, in a given state, the agent might have a **90%** probability of selecting "push left" and a **10%** probability of selecting "push right."
