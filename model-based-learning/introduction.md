@@ -1,7 +1,7 @@
 
 # Reinforcement Learning: From Value-Based to Policy-Based Methods
 
-The core goal of reinforcement learning is to learn the **optimal policy** through interaction with the environment. So far, we have been studying **[value-based methods](./value-iteration/)**, where the first step is to estimate the **optimal action-value function**. 
+The core goal of reinforcement learning is to learn the **optimal policy** through interaction with the environment. So far in **[model free learning](../model-free-learning/)**, where the first step is to estimate the **optimal action-value function**. 
 
 In **small state spaces**, this optimal value function can be represented using a **table**:  
 - Each row corresponds to a state.  
@@ -24,7 +24,7 @@ Since these numbers can take on **countless possible values**, the number of pot
 
 ## Using Neural Networks for Large State Spaces
 
-To address this issue, we explored how to use a **neural network** to represent the **optimal action-value function**, which forms the basis of the **Deep Q-Learning algorithm**.
+To address this issue, we explored how to use a **neural network** to represent the **optimal action-value function**, which forms the basis of the **[Value Based Methods](./value-iteration/), such as Deep Q Learning algorithm**.
 
 - In this case, the neural network takes the **state of the environment** as input and outputs the **value of each possible action**.
 - For example, in the "CartPole" environment, the possible actions are:
