@@ -7,7 +7,7 @@ This repository contains implementations of various deep reinforcement learning 
 
 > It is recommended to follow the material in the given order.
 
-### Model Free Learning
+### [Model Free Learning](./model-free-learning/introduction.md)
 
 #### Discrete State Problems
 
@@ -61,7 +61,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Tile coding as a method to efficiently represent continuous state spaces by overlapping feature grids
 
 
-### Model Based Learning
+### [Model Based Learning](./model-based-learning/introduction.md)
 
 #### Value Based Iteration
 
@@ -84,6 +84,21 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Introduces a new architecture that separates the estimation of **state value** $V(s)$ and **advantage function** $A(s, a)$
    - Improves learning efficiency by explicitly modeling the state value $V(s)$, which captures the overall "desirability" of actions 
    - Works particularly well in environments where some actions are redundant or where the state value $V(s)$ plays a dominant role in decision-making.
+
+#### Policy Based Iteration
+
+##### Black Box Optimization
+
+1. **[Hill Climbing](./model-based-learning/policy-iteration/black-box-optimization/hill-climbing/hill_climbing.ipynb)**  
+   - A simple optimization technique that iteratively improves the policy by making small adjustments to the parameters.  
+   - Relies on evaluating the performance of the policy after each adjustment and keeping the changes that improve performance.  
+   - Works well in low-dimensional problems but can struggle with local optima and high-dimensional spaces.  
+
+2. **[Cross Entropy Method (CEM)](./model-based-learning/policy-iteration/black-box-optimization/cross-entropy/cross_entropy_method.ipynb)**  
+   - A probabilistic optimization algorithm that searches for the best policy by iteratively sampling and updating a distribution over policy parameters.  
+   - Particularly effective in high-dimensional or continuous action spaces due to its ability to focus on promising regions of the parameter space.  
+   - Often used as a baseline for policy optimization in reinforcement learning.
+
 
 
 ## Environments Brief in This Project
@@ -147,8 +162,8 @@ Or explore the detailed notebook:
    - [x] [Prioritized DDQN](https://arxiv.org/pdf/1511.05952)
    - [x] [Dueling DDQN](https://arxiv.org/pdf/1511.06581)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
-   - [ ] Hill Climbing
-   - [ ] Cross Entropy Method
+   - [x] Hill Climbing
+   - [x] Cross Entropy Method
    - [ ] REINFORCE
    - [ ] A2C
    - [ ] [A3C](https://arxiv.org/pdf/1602.01783)
