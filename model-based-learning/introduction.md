@@ -1,7 +1,7 @@
 
 # Reinforcement Learning: From Value-Based to Policy-Based Methods
 
-The core goal of reinforcement learning is to learn the **optimal policy** through interaction with the environment. So far, we have been studying **value-based methods**, where the first step is to estimate the **optimal action-value function**. 
+The core goal of reinforcement learning is to learn the **optimal policy** through interaction with the environment. So far, we have been studying **[value-based methods](./value-iteration/)**, where the first step is to estimate the **optimal action-value function**. 
 
 In **small state spaces**, this optimal value function can be represented using a **table**:  
 - Each row corresponds to a state.  
@@ -40,7 +40,7 @@ Whether we use a **table** (for small state spaces) or a **neural network** (for
 However, the question now arises:  
 **Can we directly find the optimal policy without estimating the value function?**
 
-The answer is **yes**, and we can achieve this through a class of algorithms known as **Policy-Based Methods**.
+The answer is **yes**, and we can achieve this through a class of algorithms known as **[Policy-Based Methods](./policy-iteration/)**.
 
 ### Policy Function Approximation
 
