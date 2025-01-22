@@ -67,20 +67,20 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 ##### Vanilla Deep Q Network
 
-1. **[Deep Q Network with Experience Replay (DQN)](./model-based-learning/value-iteration/vanilla-dqn/dqn_lunarlander.ipynb)**
+1. **[Deep Q Network with Experience Replay (DQN)](./model-based-learning/value-based/vanilla-dqn/dqn_lunarlander.ipynb)**
    - A neural network is used to approximate the Q-value function $Q(s, a)$.
    - Breaks the temporal correlation of samples by randomly sampling from a replay buffer.
    - Periodically updates the target network's parameters to reduce instability in target value estimation.
 
 ##### Variants of Deep Q Network
 
-1. **[Double Deep Q Network with Experience Replay (DDQN)](./model-based-learning/value-iteration/variants-dqn/double_dqn_lunarlander.ipynb)**
+1. **[Double Deep Q Network with Experience Replay (DDQN)](./model-based-learning/value-based/variants-dqn/double_dqn_lunarlander.ipynb)**
    - Addresses the overestimation bias in vanilla DQN by decoupling action selection and evaluation.
    - This decoupling helps stabilize training and improves the accuracy of Q-value estimates.
-2. **[Prioritized Double Deep Q Network (Prioritized DDQN)](./model-based-learning/value-iteration/variants-dqn/prioritized_ddqn_lunarlander.ipynb)**  
+2. **[Prioritized Double Deep Q Network (Prioritized DDQN)](./model-based-learning/value-based/variants-dqn/prioritized_ddqn_lunarlander.ipynb)**  
    - Enhances the efficiency of experience replay by prioritizing transitions with higher temporal-difference (TD) errors.  
    - Combines the stability of Double DQN with prioritized sampling to focus on more informative experiences.
-3. **[Dueling Double Deep Q Network (Dueling DDQN)](./model-based-learning/value-iteration/variants-dqn/dueling_ddqn_lunarlander.ipynb)**
+3. **[Dueling Double Deep Q Network (Dueling DDQN)](./model-based-learning/value-based/variants-dqn/dueling_ddqn_lunarlander.ipynb)**
    - Introduces a new architecture that separates the estimation of **state value** $V(s)$ and **advantage function** $A(s, a)$
    - Improves learning efficiency by explicitly modeling the state value $V(s)$, which captures the overall "desirability" of actions 
    - Works particularly well in environments where some actions are redundant or where the state value $V(s)$ plays a dominant role in decision-making.
@@ -89,15 +89,22 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 ##### Black Box Optimization
 
-1. **[Hill Climbing](./model-based-learning/policy-iteration/black-box-optimization/hill-climbing/hill_climbing.ipynb)**  
+1. **[Hill Climbing](./model-based-learning/policy-based/black-box-optimization/hill-climbing/hill_climbing.ipynb)**  
    - A simple optimization technique that iteratively improves the policy by making small adjustments to the parameters.  
    - Relies on evaluating the performance of the policy after each adjustment and keeping the changes that improve performance.  
    - Works well in low-dimensional problems but can struggle with local optima and high-dimensional spaces.  
 
-2. **[Cross Entropy Method (CEM)](./model-based-learning/policy-iteration/black-box-optimization/cross-entropy/cross_entropy_method.ipynb)**  
+2. **[Cross Entropy Method (CEM)](./model-based-learning/policy-based/black-box-optimization/cross-entropy/cross_entropy_method.ipynb)**  
    - A probabilistic optimization algorithm that searches for the best policy by iteratively sampling and updating a distribution over policy parameters.  
    - Particularly effective in high-dimensional or continuous action spaces due to its ability to focus on promising regions of the parameter space.  
    - Often used as a baseline for policy optimization in reinforcement learning.
+
+##### Policy Gradient Methods
+
+
+
+
+
 
 
 
