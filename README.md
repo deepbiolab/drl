@@ -172,9 +172,9 @@ Or explore the detailed notebook:
    - [x] [Prioritized DDQN](https://arxiv.org/pdf/1511.05952)
    - [x] [Dueling DDQN](https://arxiv.org/pdf/1511.06581)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
-   - [x] Hill Climbing
-   - [x] Cross Entropy Method
-   - [x] REINFORCE
+   - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
+   - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
+   - [x] [REINFORCE](https://people.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf)
    - [ ] PPO
    - [ ] A2C
    - [ ] DDPG
