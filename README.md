@@ -100,7 +100,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Often used as a baseline for policy optimization in reinforcement learning.
 
 ##### Policy Gradient Methods
-1. **[REINFORCE](./model-based-learning/policy-based/policy-gradient-methods/reinforce/reinforce.ipynb)**  
+1. **[REINFORCE](./model-based-learning/policy-based/policy-gradient-methods/vanilla-reinforce/reinforce_with_discrete_actions.ipynb)**
    - A foundational policy gradient algorithm that directly optimizes the policy by maximizing the expected cumulative reward.
    - Uses Monte Carlo sampling to estimate the policy gradient.
    - Updates the policy parameters based on the gradient of the expected reward with respect to the policy.
@@ -175,7 +175,7 @@ Or explore the detailed notebook:
    - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
    - [x] [REINFORCE](https://people.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf)
-   - [ ] PPO
+   - [ ] [PPO](https://arxiv.org/pdf/1707.06347)
    - [ ] A2C
    - [ ] DDPG
    - [ ] [A3C](https://arxiv.org/pdf/1602.01783)
