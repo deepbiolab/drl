@@ -105,10 +105,10 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Uses Monte Carlo sampling to estimate the policy gradient.
    - Updates the policy parameters based on the gradient of the expected reward with respect to the policy.
 
-
-
-
-
+2. **[Improved REINFORCE](./model-based-learning/policy-based/policy-gradient-methods/improved-reinforce/improved_reinforce.ipynb)**
+   - Parallel collection of multiple trajectories and allows the policy gradient to be estimated by averaging across different trajectories, leading to more stable updates.
+   - Rewards are normalized to stabilize learning and ensure consistent gradient step sizes.
+   - Credit assignment is improved by considering only the future rewards for each action and reduces gradient noise without affecting the averaged gradient, leading to faster and more stable training.
 
 
 ## Environments Brief in This Project
@@ -119,6 +119,8 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 - **[MountainCar](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/classic_control/mountain_car.py)**: Continuous control task where an underpowered car must learn to build momentum by moving back and forth to overcome a steep hill and reach the goal position.
 - **[Acrobot](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/classic_control/acrobot.py)**: A two-link robotic arm environment where the goal is to swing the end of the second link above a target height by applying torque at the actuated joint. It challenges agents to solve nonlinear dynamics and coordinate the motion of linked components efficiently.
 - **[LunarLander](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/box2d/lunar_lander.py)**: A physics-based environment where an agent controls a lunar lander to safely land on a designated pad. The task involves managing fuel consumption, balancing thrust, and handling the dynamics of gravity and inertia.
+- **[PongDeterministic-v4](https://ale.farama.org/environments/pong/)**: A classic Atari environment where the agent learns to play Pong, a two-player game where the objective is to hit the ball past the opponent's paddle. The Deterministic-v4 variant ensures fixed frame-skipping, making the environment faster and more predictable for training. This environment is commonly used to benchmark reinforcement learning algorithms, especially for discrete action spaces.
+
 
 ## Requirements
 
