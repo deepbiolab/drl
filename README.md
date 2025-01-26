@@ -110,6 +110,11 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Rewards are normalized to stabilize learning and ensure consistent gradient step sizes.
    - Credit assignment is improved by considering only the future rewards for each action and reduces gradient noise without affecting the averaged gradient, leading to faster and more stable training.
 
+3. **[Proximal Policy Optimization (PPO)](./model-based-learning/policy-based/policy-gradient-methods/proximal-policy-optimization/ppo.ipynb)**
+   - Introduces a clipped surrogate objective to ensure stable updates by preventing large changes in the policy.
+   - Balances exploration and exploitation by limiting the policy ratio deviation within a trust region.
+   - Combines the simplicity of REINFORCE with the stability of Trust Region Policy Optimization (TRPO), making it efficient and robust for large-scale problems.
+
 
 ## Environments Brief in This Project
 
@@ -177,7 +182,7 @@ Or explore the detailed notebook:
    - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
    - [x] [REINFORCE](https://people.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf)
-   - [ ] [PPO](https://arxiv.org/pdf/1707.06347)
+   - [x] [PPO](https://arxiv.org/pdf/1707.06347)
    - [ ] A2C
    - [ ] DDPG
    - [ ] [A3C](https://arxiv.org/pdf/1602.01783)
