@@ -1,5 +1,5 @@
 
-# Reinforcement Learning: From Value-Based to Policy-Based Methods
+# Mobel Based Learning: From Value-Based to Policy-Based Methods and the Actor-Critic Framework
 
 The core goal of reinforcement learning is to learn the **optimal policy** through interaction with the environment. So far in **[model free learning](../model-free-learning/)**, where the first step is to estimate the **optimal action-value function**. 
 
