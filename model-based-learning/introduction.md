@@ -69,9 +69,9 @@ This is an iterative process. Initially, the weights are set to random values. A
 
 ## Combining Value and Policy: Actor-Critic Methods
 
-While policy-based methods have the aforementioned advantages, they also suffer from certain drawbacks, such as **high variance** and **slow learning speed**. This is because policy-based methods typically rely solely on policy information without fully leveraging the value information from the environment.
+While policy-based methods have the aforementioned advantages, they also suffer from certain drawbacks, such as **high variance** due to their reliance on Monte-Carlo estimates of returns and gradients and **slow learning speed**. This is because policy-based methods typically rely solely on policy information without fully leveraging the value information from the environment.
 
-To address these shortcomings, the **[Actor-Critic (AC) method](./actor-critic/)** was introduced. It combines the strengths of both value-based and policy-based methods, utilizing the advantages of each.
+To address these shortcomings, the **[Actor-Critic (AC) method](./actor-critic/)** was introduced. It combines the strengths of both value-based and policy-based methods, utilizing the advantages of each. 
 
 The Actor-Critic method consists of two main components:
 
@@ -82,14 +82,18 @@ At each time step, the actor selects an action based on the policy, interacts wi
 
 ### How Actor-Critic Methods Address Previous Drawbacks
 
+The term **"critic"** implies that **bias has been introduced**, as Monte-Carlo estimates are unbiased but high variance. If instead of using Monte-Carlo estimates to train baselines, we use **Temporal Difference (TD) estimates (low variance but high bias)**, then we can say we have a **critic**. 
+> About Bias and Variance introduced in this [introduction](../model-free-learning/introduction.md)
+
+While this introduces bias, it reduces variance, thus improving convergence properties and speeding up learning.  Furtherly, by introducing **function approximation**, such as neural networks, can help **mitigate the bias introduced by pure TD methods**. TD methods rely on bootstrapping, where estimates depend on current approximations, potentially leading to cumulative bias if the value function is inaccurate. Function approximation addresses this by leveraging global information across the state space, capturing broader relationships rather than relying solely on local updates. It generalizes from training data, enabling reasonable estimates for unseen states, smooths the value function to avoid extreme biases, and reduces the impact of noise by fitting patterns from large datasets. 
+
+However, while function approximation reduces bias, it may introduce approximation errors if the model's capacity or training data is insufficient, highlighting a trade-off in practical applications.
+
+In essence, actor-critic methods address these challenges by:
 - Reducing Variance
-   - The critic provides an **estimate of the value function, which acts as a baseline for the policy gradient**. This significantly **reduces the variance of the gradient estimation**, improving the stability and efficiency of learning.
-
 - Accelerating Learning Speed
-   - The feedback from the critic allows the actor to **adjust its policy parameters more accurately**, accelerating the learning process.
-
 - Stabilizing Policy Updates
-   - Actor-Critic methods provide a framework for **smoother policy updates**, avoiding large parameter fluctuations caused by high variance.
+
 
 ### Applicability of Actor-Critic Methods
 
