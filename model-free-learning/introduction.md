@@ -16,20 +16,20 @@ Model-free reinforcement learning methods are a class of algorithms that enable 
 
 - **Process**:
   - Roll out an entire episode.
-  - Calculate the total discounted reward ($ G_t $) from the sequence of rewards obtained during the episode.
+  - Calculate the total discounted reward ($G_t$) from the sequence of rewards obtained during the episode.
   - For example:
-    - Start in state $ S_t $, take action $ A_t $, receive reward $ R_t+1 $, and transition to $ S_{t+1} $.
+    - Start in state $ S_t $, take action $A_t$, receive reward $ R_t$, and transition to $S_{t+1}$.
     - Continue this process until the episode ends.
   - Sum up all rewards (discounted or not) to compute the total return.
 
 - **Averaging Across Episodes**:
-  - Multiple episodes ($ A, B, C, D $) may pass through the same state.
+  - Multiple episodes ($A, B, C, D$) may pass through the same state.
   - To estimate the value function for a state, average the Monte-Carlo estimates from all episodes that visit that state.
   - More episodes result in a more accurate value function.
 
 - **Characteristics**:
   - **High Variance**: Estimates can vary significantly across episodes due to randomness in trajectories.
-    - Example: $ G_t(A) = -100 $, $ G_t(B) = +100 $, $ G_t(C) = +1000 $.
+    - Example: $G_t(A) = -100$, $G_t(B) = +100$, $G_t(C) = +1000$.
   - **Unbiased**: Estimates are based solely on actual rewards observed, not on other estimates.
   - **Accuracy with Data**: Given enough data, Monte-Carlo estimates converge to the true value function.
 
@@ -45,16 +45,16 @@ Thus, Monte Carlo methods rely on episode-based learning, requiring complete epi
 Temporal Difference (TD) methods are characterized by their ability to perform **online learning**, updating value functions after every time step, and leveraging **bootstrapping**, where estimates are updated using other estimates, enabling faster learning compared to Monte Carlo methods. These methods support both **on-policy learning** (e.g., SARSA) and **off-policy learning** (e.g., Q-Learning), making them versatile for various reinforcement learning paradigms. TD methods offer notable advantages, such as not requiring complete episodes and achieving faster convergence.
 
 - **Process**:
-  - Estimate the value of the current state $ V(S_t) $ using:
-    1. A single reward sample ($ R_t+1 $).
-    2. An estimate of the discounted total return from the next state ($ V(S_{t+1}) $).
+  - Estimate the value of the current state $V(S_t)  $ using:
+    1. A single reward sample ($R_t$).
+    2. An estimate of the discounted total return from the next state ($V(S_{t+1})$).
   - This is called **bootstrapping**:
-    - Use the current estimate of $ V(S_{t+1}) $ to update $ V(S_t) $.
+    - Use the current estimate of $V(S_{t+1})$ to update $V(S_t)$.
     - The Bellman equation is used to propagate value updates.
 
 - **Characteristics**:
   - **Low Variance**: Updates are based on a single time step, reducing randomness compared to full episode rollouts.
-  - **Biased**: Since it relies on estimates of $ V(S_{t+1}) $, which may not be accurate early in training, it introduces bias.
+  - **Biased**: Since it relies on estimates of $V(S_{t+1})$, which may not be accurate early in training, it introduces bias.
   - **Faster Learning**: TD methods update values more frequently, allowing the agent to learn faster.
   - **Convergence Challenges**: Bootstrapping can make it harder for the agent to converge to the true value function.
 
