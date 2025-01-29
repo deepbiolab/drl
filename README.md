@@ -2,7 +2,7 @@
 # Deep Reinforcement Learning (DRL) Implementation
 
 <div style="text-align: center;">
-    <img src="./assets/main.png" alt="Mountain Car Environment" width="90%">
+    <img src="./assets/drl.png" alt="Mountain Car Environment" width="90%">
 </div>
 
 This repository contains implementations of various deep reinforcement learning algorithms, focusing on fundamental concepts and practical applications.
