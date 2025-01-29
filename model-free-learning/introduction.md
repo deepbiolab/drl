@@ -47,7 +47,7 @@ Temporal Difference (TD) methods are characterized by their ability to perform *
 - **Process**:
   - Estimate the value of the current state $V(S_t)$ using:
     1. A single reward sample ($R_t$).
-    2. An estimate of the discounted total return from the next state ($V(S_{t+1})$).
+    2. An estimate of the discounted total return from the next state ( $V(S_{t+1})$ ).
   - This is called **bootstrapping**:
     - Use the current estimate of $V(S_{t+1})$ to update $V(S_t)$.
     - The Bellman equation is used to propagate value updates.
