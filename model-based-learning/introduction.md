@@ -99,3 +99,17 @@ In essence, actor-critic methods address these challenges by:
 
 - Actor-Critic methods are particularly well-suited for handling **continuous and high-dimensional action spaces**, as the actor can directly output continuous actions.
 - By combining value estimation with policy optimization, Actor-Critic methods excel in **solving complex tasks,** such as robotic control and game agent training.
+
+
+## Summary
+
+| Aspect                  | Policy-Based Methods (Actor-only)                                                                           | Value-Based Methods (Critic-only)                                                                  | Actor-Critic Methods                                         |
+|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| **Learning Approach**   | Adjust action probabilities based on overall match outcomes (wins or losses)                                | Make continual guesses (estimates) about the final score throughout the match                      | Combine policy adjustment with value estimation              |
+| **Efficiency**          | Inefficient, requires a large amount of data and many repetitions to learn a useful policy                  | More efficient; guesses help in estimating situations and actions sooner                           | More efficient learning by using critic to speed up policy updates |
+| **Variance**            | High variance due to reliance on complete match outcomes                                                    | Lower variance as guesses are more consistent over time                                            | Reduced variance compared to policy-based methods            |
+| **Bias**                | Unbiased but can misinterpret good actions taken during losses                                              | Introduces bias through guesses, which may be inaccurate initially                                 | Balances bias and variance through combined learning         |
+| **Sample Efficiency**   | Needs many samples; slow learning process                                                                   | Learns to estimate values with fewer samples                                                       | Requires fewer samples than policy-based methods             |
+| **Advantages**          | Good at learning optimal actions after extensive experience                                                 | Effective at evaluating states and actions; helps in distinguishing good from bad situations       | More stable learning; combines strengths of both actor and critic |
+| **Disadvantages**       | Slow to learn; may decrease probability of good actions taken during losses                                 | Guesses can be wrong due to lack of experience, introducing bias                                   | Requires careful tuning of both actor and critic components  |
+| **Application**         | Useful when the primary goal is to learn optimal actions without immediate feedback on action quality       | Useful for evaluating the value of states and actions to guide decision-making                     | Widely used in practice for its balance of learning speed and stability |
