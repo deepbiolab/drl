@@ -66,3 +66,32 @@ This is an iterative process. Initially, the weights are set to random values. A
    - In continuous or high-dimensional action spaces, value-based methods require solving an optimization problem to select actions, which is computationally expensive.  
    - Policy-based methods map states directly to actions, significantly reducing computation time and making them ideal for complex scenarios.
 
+
+## Combining Value and Policy: Actor-Critic Methods
+
+While policy-based methods have the aforementioned advantages, they also suffer from certain drawbacks, such as **high variance** and **slow learning speed**. This is because policy-based methods typically rely solely on policy information without fully leveraging the value information from the environment.
+
+To address these shortcomings, the **[Actor-Critic (AC) method](./actor-critic/)** was introduced. It combines the strengths of both value-based and policy-based methods, utilizing the advantages of each.
+
+The Actor-Critic method consists of two main components:
+
+- **Actor**: Responsible for learning and outputting the policy. Based on the current policy parameters, the actor decides which action to take in a given state.
+- **Critic**: Responsible for evaluating the policy. It estimates the state-value function or action-value function to assess the quality of the current policy.
+
+At each time step, the actor selects an action based on the policy, interacts with the environment, and receives feedback in the form of rewards. The critic evaluates this feedback using the estimated value function and provides guidance to update the actor's policy, steering it in a better direction.
+
+### How Actor-Critic Methods Address Previous Drawbacks
+
+- Reducing Variance
+   - The critic provides an **estimate of the value function, which acts as a baseline for the policy gradient**. This significantly **reduces the variance of the gradient estimation**, improving the stability and efficiency of learning.
+
+- Accelerating Learning Speed
+   - The feedback from the critic allows the actor to **adjust its policy parameters more accurately**, accelerating the learning process.
+
+- Stabilizing Policy Updates
+   - Actor-Critic methods provide a framework for **smoother policy updates**, avoiding large parameter fluctuations caused by high variance.
+
+### Applicability of Actor-Critic Methods
+
+- Actor-Critic methods are particularly well-suited for handling **continuous and high-dimensional action spaces**, as the actor can directly output continuous actions.
+- By combining value estimation with policy optimization, Actor-Critic methods excel in **solving complex tasks,** such as robotic control and game agent training.
