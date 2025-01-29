@@ -22,7 +22,7 @@ For environments with much **larger state spaces**, this approach is no longer f
 
 Since these numbers can take on **countless possible values**, the number of potential states becomes enormous. Without some form of **discretization**, it is impossible to represent the optimal action-value function in a table. This is because it would require a row for every possible state, making the table far too large to be practical.
 
-## Using Neural Networks for Large State Spaces
+## Using Neural Networks for Large State Spaces: Value-Based Methods
 
 To address this issue, we explored how to use a **neural network** to represent the **optimal action-value function**, which forms the basis of the **[Value Based Methods](./value-iteration/), such as Deep Q Learning algorithm**.
 
