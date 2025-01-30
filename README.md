@@ -191,16 +191,17 @@ Or explore the detailed notebook:
    - [x] [Prioritized DDQN](https://arxiv.org/pdf/1511.05952)
    - [x] [Dueling DDQN](https://arxiv.org/pdf/1511.06581)
    - [x] [Async One Step DQN](https://arxiv.org/pdf/1602.01783)
-   - [ ] [Async N Step DQN](https://arxiv.org/pdf/1602.01783)
+   - [x] [Async N Step DQN](https://arxiv.org/pdf/1602.01783)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
    - [x] [REINFORCE](https://people.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf)
    - [x] [PPO](https://arxiv.org/pdf/1707.06347)
-   - [ ] A2C
-   - [ ] DDPG
    - [ ] [A3C](https://arxiv.org/pdf/1602.01783)
-   - [ ] MCTS, AlphaZero
+   - [ ] [A2C](https://arxiv.org/pdf/1602.01783)
+   - [ ] DDPG
+   - [ ] MCTS
+   - [ ] AlphaZero
 
     
 
