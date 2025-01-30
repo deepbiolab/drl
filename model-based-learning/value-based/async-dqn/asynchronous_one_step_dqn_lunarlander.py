@@ -141,12 +141,12 @@ class Agent:
         """Processes a step and learns from the experience."""
         # Convert experience to tensors
         state = torch.tensor(state, dtype=torch.float32).unsqueeze(0).to(device)
-        action = torch.tensor([[action]], dtype=torch.int64).to(device)
-        reward = torch.tensor([[reward]], dtype=torch.float32).to(device)
+        action = torch.tensor(action, dtype=torch.int64).reshape(1, 1).to(device)
+        reward = torch.tensor(reward, dtype=torch.float32).reshape(1, 1).to(device)
         next_state = (
             torch.tensor(next_state, dtype=torch.float32).unsqueeze(0).to(device)
         )
-        done = torch.tensor([[done]], dtype=torch.float32).to(device)
+        done = torch.tensor(done, dtype=torch.float32).reshape(1, 1).to(device)
 
         # Perform learning step
         loss = self.compute_loss((state, action, reward, next_state, done))
@@ -344,7 +344,7 @@ if __name__ == "__main__":
 
     # Number of processes
     num_processes = 8
-    num_episodes = 5000
+    num_episodes = 2000
 
     processes = []
     for rank in range(num_processes):
