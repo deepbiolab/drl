@@ -88,6 +88,10 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Introduces a new architecture that separates the estimation of **state value** $V(s)$ and **advantage function** $A(s, a)$
    - Improves learning efficiency by explicitly modeling the state value $V(s)$, which captures the overall "desirability" of actions 
    - Works particularly well in environments where some actions are redundant or where the state value $V(s)$ plays a dominant role in decision-making.
+4. **[Asynchronous Deep Q Network without Experience Replay (AsyncDQN)](./model-based-learning/value-based/variants-dqn/asynchronous_dqn_lunarlander.ipynb)**
+   - Eliminates the dependency on experience replay by using asynchronous parallel processes to interact with the environment and update the shared Q-network.
+   - Achieves significant speedup by leveraging multiple CPU cores, making it highly efficient even without GPU acceleration.
+   - Compared to Dueling DDQN (22 minutes), AsyncDQN completes training in just 4.29 minutes on CPU, achieving a 5x speedup.
 
 #### Policy Based Iteration
 
@@ -182,6 +186,7 @@ Or explore the detailed notebook:
    - [x] [DDQN](https://arxiv.org/pdf/1509.06461)
    - [x] [Prioritized DDQN](https://arxiv.org/pdf/1511.05952)
    - [x] [Dueling DDQN](https://arxiv.org/pdf/1511.06581)
+   - [x] [Async DQN](https://arxiv.org/pdf/1602.01783)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
