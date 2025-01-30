@@ -1,4 +1,4 @@
-"""See explaination in notebook (asynchronous_dqn_lunarlander.ipynb)"""
+"""See explaination in notebook (asynchronous_one_step_dqn_lunarlander.ipynb)"""
 
 import os
 import time
