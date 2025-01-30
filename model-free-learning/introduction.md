@@ -44,6 +44,10 @@ Thus, Monte Carlo methods rely on episode-based learning, requiring complete epi
 
 Temporal Difference (TD) methods are characterized by their ability to perform **online learning**, updating value functions after every time step, and leveraging **bootstrapping**, where estimates are updated using other estimates, enabling faster learning compared to Monte Carlo methods. These methods support both **on-policy learning** (e.g., SARSA) and **off-policy learning** (e.g., Q-Learning), making them versatile for various reinforcement learning paradigms. TD methods offer notable advantages, such as not requiring complete episodes and achieving faster convergence.
 
+> How to understand **ON** or **OFF** policy
+> - In `Sarsa`, the action used for calculating error in learning process is the action the agent will take in the next time step when **interacting with the environment**, `A'`, so called **on**-policy.
+> - In `Sarsa Max or (Q-learning)`, the action used for calculating error in learning process is the action with the **existed highest value in Q table**. However, this action is not necessarily the one with interacting with the environment; in other words, this action is not necessarily `A'`, so called **off**-policy
+
 - **Process**:
   - Estimate the value of the current state $V(S_t)$ using:
     1. A single reward sample ($R_t$).
