@@ -96,6 +96,11 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Achieves significant speedup by leveraging multiple CPU cores, making it highly efficient even without GPU acceleration.
    - Compared to Dueling DDQN (22 minutes), AsyncDQN completes training in just 4.29 minutes on CPU, achieving a 5x speedup.
 
+2. **[Asynchronous N-Step Deep Q Network without Experience Replay (AsyncNDQN)](./model-based-learning/value-based/async-dqn/asynchronous_n_step_dqn_lunarlander.ipynb)**
+   - Extends AsyncDQN by incorporating N-step returns, which balances the trade-off between bias (shorter N) and variance (longer N).
+   - N-step returns accelerate the propagation of rewards across states, enabling faster convergence compared to one-step updates.
+   - Like AsyncDQN, it eliminates the dependency on experience replay, using asynchronous parallel processes to update the shared Q-network.
+
 
 #### Policy Based Iteration
 
