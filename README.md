@@ -96,7 +96,11 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Achieves significant speedup by leveraging multiple CPU cores, making it highly efficient even without GPU acceleration.
    - Compared to Dueling DDQN (22 minutes), AsyncDQN completes training in just 4.29 minutes on CPU, achieving a 5x speedup.
 
-2. **[Asynchronous N-Step Deep Q Network without Experience Replay (AsyncNDQN)](./model-based-learning/value-based/async-dqn/asynchronous_n_step_dqn_lunarlander.ipynb)**
+2. **[Asynchronous One Step Deep SARSA without Experience Replay (AsyncDSARSA)](./model-based-learning/value-based/async-dqn/asynchronous_one_step_deep_sarsa_lunarlander.py)**
+   - Utilizes same asynchronous parallel processes to update a shared Q-network without the need for experience replay.  
+   - Employs a one-step SARSA—on-policy update rule that leverages the next selected action to enhance stability and reduce overestimation (basically same as AsyncDQN).
+
+3. **[Asynchronous N-Step Deep Q Network without Experience Replay (AsyncNDQN)](./model-based-learning/value-based/async-dqn/asynchronous_n_step_dqn_lunarlander.ipynb)**
    - Extends AsyncDQN by incorporating N-step returns, which balances the trade-off between bias (shorter N) and variance (longer N).
    - N-step returns accelerate the propagation of rewards across states, enabling faster convergence compared to one-step updates.
    - Like AsyncDQN, it eliminates the dependency on experience replay, using asynchronous parallel processes to update the shared Q-network.
@@ -197,6 +201,7 @@ Or explore the detailed notebook:
    - [x] [Dueling DDQN](https://arxiv.org/pdf/1511.06581)
    - [x] [Async One Step DQN](https://arxiv.org/pdf/1602.01783)
    - [x] [Async N Step DQN](https://arxiv.org/pdf/1602.01783)
+   - [x] [Async One Step SARSA](https://arxiv.org/pdf/1602.01783)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
