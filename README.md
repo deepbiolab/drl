@@ -150,9 +150,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 
 ## Requirements
 
-Create (and activate) a new environment with `Python 3.10` and `PyTorch 2.5.1`
-
-- **Linux** or **Mac**: 
+Create (and activate) a new environment with `Python 3.10` and install [Pytorch](https://pytorch.org/get-started/locally/) with version `PyTorch 2.5.1`
 
 ```bash
 conda create -n DRL python=3.10
@@ -202,6 +200,8 @@ Or explore the detailed notebook:
    - [x] [Async One Step DQN](https://arxiv.org/pdf/1602.01783)
    - [x] [Async N Step DQN](https://arxiv.org/pdf/1602.01783)
    - [x] [Async One Step SARSA](https://arxiv.org/pdf/1602.01783)
+   - [ ] [Distributional DQN](https://arxiv.org/pdf/1707.06887)
+   - [ ] [Noisy DQN](https://arxiv.org/pdf/1706.10295)
    - [ ] [Rainbow](https://arxiv.org/pdf/1710.02298)
    - [x] [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing)
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
