@@ -297,12 +297,11 @@ def worker_dqn(
         if len(scores_window) >= window and mean_score >= 200.0:
             with max_score.get_lock():
                 max_score.value = mean_score
-                if rank == 0:
-                    print(
-                        f"\nEnvironment solved in {i_episode:d} episodes!\tAverage Score: {mean_score:.2f}"
-                    )
-                    torch.save(agent.Q.state_dict(), "checkpoint.pth")
-            break
+                print(
+                    f"\nEnvironment solved in {i_episode:d} episodes!\tAverage Score: {mean_score:.2f}"
+                )
+                torch.save(agent.Q.state_dict(), "checkpoint.pth")
+                break
 
     env.close()
 
