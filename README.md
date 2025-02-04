@@ -89,6 +89,14 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Improves learning efficiency by explicitly modeling the state value $V(s)$, which captures the overall "desirability" of actions 
    - Works particularly well in environments where some actions are redundant or where the state value $V(s)$ plays a dominant role in decision-making.
 
+4. **[Noisy Dueling Prioritized Double Deep Q-Network (Noisy DDQN)](./model-based-learning/value-based/variants-dqn/noisy_dueling_ddqn_lunarlander.ipynb)**
+   - Combines **Noisy Networks**, **Dueling Architecture**, **Prioritized Experience Replay**, and **Double Q-Learning** into a single framework.
+   - **Noisy Networks** replace ε-greedy exploration with parameterized noise, enabling more efficient exploration by learning stochastic policies.
+   - **Dueling Architecture** separates the estimation of **state value** $V(s)$ and **advantage function** $A(s, a)$, improving learning efficiency.
+   - **Prioritized Experience Replay** focuses on transitions with higher temporal-difference (TD) errors, enhancing sample efficiency.
+   - **Double Q-Learning** reduces overestimation bias by decoupling action selection from evaluation.
+   - This combination significantly improves convergence speed and stability, particularly in environments with sparse or noisy rewards.
+
 ##### Asynchronous Deep Q Network
 
 1. **[Asynchronous One Step Deep Q Network without Experience Replay (AsyncDQN)](./model-based-learning/value-based/async-dqn/asynchronous_dqn_lunarlander.ipynb)**
