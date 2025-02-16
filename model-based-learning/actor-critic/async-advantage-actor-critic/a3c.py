@@ -12,6 +12,7 @@ import ale_py
 
 gym.register_envs(ale_py)
 
+
 class Action(Enum):
     NOOP = 0
     FIRE = 1
@@ -20,9 +21,11 @@ class Action(Enum):
     RIGHTFIRE = 4
     LEFTFIRE = 5
 
+
 # Random action function using numpy broadcasting
 def get_random_action(n):
     return np.random.choice([Action.RIGHTFIRE.value, Action.LEFTFIRE.value], size=n)
+
 
 def perform_random_steps(env, nrand, parallel=False):
     """
@@ -57,6 +60,7 @@ def perform_random_steps(env, nrand, parallel=False):
             break
     return frames1, frames2
 
+
 def preprocess(image, bkg_color=np.array([144, 72, 17])):
     """Preprocess a single frame - copied from a2c.ipynb"""
     cropped_image = image[34:-16, :]
@@ -65,6 +69,7 @@ def preprocess(image, bkg_color=np.array([144, 72, 17])):
     grayscale_image = np.mean(adjusted_image, axis=-1)
     normalized_image = grayscale_image / 255.0
     return normalized_image
+
 
 def preprocess_batch(images, bkg_color=np.array([144, 72, 17])):
     """Convert batch of frames to tensor - copied from a2c.ipynb"""
@@ -79,6 +84,7 @@ def preprocess_batch(images, bkg_color=np.array([144, 72, 17])):
     batch_input = torch.from_numpy(normalized_images).float()
     batch_input = batch_input.permute(1, 0, 2, 3)
     return batch_input
+
 
 # Network architectures remain the same
 class SharedFeatureExtractor(nn.Module):
@@ -99,6 +105,7 @@ class SharedFeatureExtractor(nn.Module):
         x = F.relu(self.fc(x))
         return x
 
+
 class ActorCriticNet(nn.Module):
     def __init__(self, hidden_dim=128):
         super(ActorCriticNet, self).__init__()
@@ -117,8 +124,10 @@ class ActorCriticNet(nn.Module):
         self.fc_actor.share_memory()
         self.fc_critic.share_memory()
 
+
 class Agent:
     """Interacts with and learns from the environment using A2C algorithm."""
+
     def __init__(
         self,
         network,
@@ -128,8 +137,8 @@ class Agent:
         value_loss_weight=1.0,
         n_steps=5,
         seed=42,
-        T=None,  # 全局步数计数器（可在多进程共享）
-        optimizer_lock=None,  # 用于保证 optimizer 更新的锁
+        T=None,
+        optimizer_lock=None,
     ):
         self.network = network
         self.optimizer = optimizer
@@ -138,8 +147,8 @@ class Agent:
         self.value_loss_weight = value_loss_weight
         self.n_steps = n_steps
         self.seed = seed
-        self.T = T  # 全局步数计数器
-        self.optimizer_lock = optimizer_lock  # 确保optimizer更新的锁
+        self.T = T
+        self.optimizer_lock = optimizer_lock
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.network.to(self.device)
 
@@ -203,11 +212,13 @@ class Agent:
         episode_reward = 0
         episode_length = 0
 
-        while T.value < 1000000:  # 全局训练步数限制
+        while T.value < 1000000:
             self.states.append(preprocess_batch((frame1, frame2)))
             action, log_prob, value = self.get_action(frame1, frame2)
 
-            frame1, reward, done, *_ = env.step(Action.LEFTFIRE.value if action == 1 else Action.RIGHTFIRE.value)
+            frame1, reward, done, *_ = env.step(
+                Action.LEFTFIRE.value if action == 1 else Action.RIGHTFIRE.value
+            )
             frame2, _, done, *_ = env.step(Action.NOOP.value)
 
             self.actions.append(action)
@@ -219,30 +230,28 @@ class Agent:
             episode_length += 1
 
             if len(self.rewards) == self.n_steps or done:
-                next_value = 0 if done else self.get_action(frame1, frame2)[2]  # 使用value估计
+                next_value = 0 if done else self.get_action(frame1, frame2)[2]
                 loss = self.compute_loss(next_value, done)
 
-                # 使用锁来确保只有一个进程更新全局网络
                 with optimizer_lock:
                     self.optimizer.zero_grad()
                     loss.backward()
-                    # 梯度裁剪
                     torch.nn.utils.clip_grad_norm_(self.network.parameters(), 10)
                     self.optimizer.step()
 
-                # 清空缓存
                 self.states.clear()
                 self.actions.clear()
                 self.rewards.clear()
                 self.values.clear()
                 self.log_probs.clear()
 
-            # 更新全局步数计数器
             with T.get_lock():
                 T.value += 1
 
             if done:
-                print(f"Global step {T.value}, Episode reward: {episode_reward}, length: {episode_length}")
+                print(
+                    f"Global step {T.value}, Episode reward: {episode_reward}, length: {episode_length}"
+                )
                 frame1, frame2 = perform_random_steps(env, nrand=5, parallel=False)
                 done = False
                 episode_reward = 0
@@ -284,15 +293,13 @@ def a3c(
     num_workers=8,
 ):
     """A3C training function."""
-    # 创建全局网络
     global_network = ActorCriticNet(hidden_dim=hidden_dim)
     global_network.share_memory()  # 共享内存
     optimizer = SharedAdam(global_network.parameters(), lr=lr)
-    # 创建全局计数器和锁
-    T = mp.Value("i", 0)  # 共享的全局计数器
-    optimizer_lock = mp.Lock()  # 确保optimizer更新的锁
 
-    # 创建进程
+    T = mp.Value("i", 0)
+    optimizer_lock = mp.Lock()
+
     processes = []
     for rank in range(num_workers):
         env = gym.make(env_name)
@@ -303,7 +310,7 @@ def a3c(
             entropy_weight=entropy_weight,
             value_loss_weight=value_loss_weight,
             n_steps=n_steps,
-            seed=rank,  # 每个worker使用不同的随机种子
+            seed=rank,
             T=T,
             optimizer_lock=optimizer_lock,
         )
@@ -311,12 +318,12 @@ def a3c(
         p.start()
         processes.append(p)
 
-    # 等待所有进程结束
     for p in processes:
         p.join()
 
     print("Training complete.")
 
+
 if __name__ == "__main__":
-    mp.set_start_method("spawn")  # 推荐使用spawn或forkserver
+    mp.set_start_method("spawn")
     a3c()
