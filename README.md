@@ -145,6 +145,19 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
    - Combines the simplicity of REINFORCE with the stability of Trust Region Policy Optimization (TRPO), making it efficient and robust for large-scale problems.
 
 
+#### Actor Critic Methods
+
+1. **[A2C](./model-based-learning/actor-critic/advantage-actor-critic/a2c.ipynb)**
+   - A synchronous version of the Advantage Actor-Critic (A3C) algorithm.
+   - Uses multiple parallel environments to collect trajectories and updates the policy in a synchronized manner.
+   - Combines the benefits of policy-based and value-based methods by using a shared network to estimate both the policy (actor) and the value function (critic).
+
+2. **[A3C](./model-based-learning/actor-critic/async-advantage-actor-critic/a3c.py)**
+   - An asynchronous version of the Advantage Actor-Critic algorithm.  
+   - Multiple agents interact with independent environments asynchronously, allowing faster updates and better exploration of the state space.  
+   - Each agent maintains its own local network, which is periodically synchronized with a global network.  
+
+
 ## Environments Brief in This Project
 
 - **[Blackjack](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/toy_text/blackjack.py)**: Classic card game environment for policy learning
@@ -215,8 +228,8 @@ Or explore the detailed notebook:
    - [x] [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method)
    - [x] [REINFORCE](https://people.cs.umass.edu/~barto/courses/cs687/williams92simple.pdf)
    - [x] [PPO](https://arxiv.org/pdf/1707.06347)
-   - [ ] [A3C](https://arxiv.org/pdf/1602.01783)
-   - [ ] [A2C](https://arxiv.org/pdf/1602.01783)
+   - [x] [A3C](https://arxiv.org/pdf/1602.01783)
+   - [x] [A2C](https://arxiv.org/pdf/1602.01783)
    - [ ] DDPG
    - [ ] MCTS
    - [ ] AlphaZero
