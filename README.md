@@ -155,7 +155,18 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 2. **[A3C](./model-based-learning/actor-critic/async-advantage-actor-critic/a3c.py)**
    - An asynchronous version of the Advantage Actor-Critic algorithm.  
    - Multiple agents interact with independent environments asynchronously, allowing faster updates and better exploration of the state space.  
-   - Each agent maintains its own local network, which is periodically synchronized with a global network.  
+   - Each agent maintains its own local network, which is periodically synchronized with a global network. 
+
+3. **[DDPG](./model-based-learning/actor-critic/deep-deterministic-policy-gradient/ddpg.ipynb)**
+   - A off-policy Actor-Critic algorithm designed for **continuous action spaces**.
+   - Combines the deterministic policy gradient with Q-learning to optimize a parameterized policy.
+   - Uses **two networks**:
+     - **Actor**: Learns a deterministic policy $\mu(s | \theta^\mu)$ to select actions.
+     - **Critic**: Estimates the action-value function $Q(s, a | \theta^Q)$.
+   - Employs **target networks** for both Actor and Critic to stabilize training by slowly updating the target parameters:
+   - Leverages **experience replay** to store transitions and break correlations between sequential data.
+   - Introduces **exploration noise** (e.g., Ornstein-Uhlenbeck process) to encourage exploration in continuous action spaces.
+
 
 
 ## Environments Brief in This Project
@@ -167,6 +178,7 @@ Implementation of TD algorithms on both Blackjack and CliffWalking environments:
 - **[Acrobot](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/classic_control/acrobot.py)**: A two-link robotic arm environment where the goal is to swing the end of the second link above a target height by applying torque at the actuated joint. It challenges agents to solve nonlinear dynamics and coordinate the motion of linked components efficiently.
 - **[LunarLander](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/box2d/lunar_lander.py)**: A physics-based environment where an agent controls a lunar lander to safely land on a designated pad. The task involves managing fuel consumption, balancing thrust, and handling the dynamics of gravity and inertia.
 - **[PongDeterministic-v4](https://ale.farama.org/environments/pong/)**: A classic Atari environment where the agent learns to play Pong, a two-player game where the objective is to hit the ball past the opponent's paddle. The Deterministic-v4 variant ensures fixed frame-skipping, making the environment faster and more predictable for training. This environment is commonly used to benchmark reinforcement learning algorithms, especially for discrete action spaces.
+- **[Pendulum-v1](https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/classic_control/pendulum.py)**: A classic control task where the goal is to balance a pendulum by applying torque at the actuated joint. The environment challenges agents to solve nonlinear dynamics and maintain equilibrium in a continuous state and action space.
 
 
 ## Requirements
@@ -230,7 +242,7 @@ Or explore the detailed notebook:
    - [x] [PPO](https://arxiv.org/pdf/1707.06347)
    - [x] [A3C](https://arxiv.org/pdf/1602.01783)
    - [x] [A2C](https://arxiv.org/pdf/1602.01783)
-   - [ ] DDPG
+   - [x] [DDPG](https://arxiv.org/pdf/1509.02971)
    - [ ] MCTS
    - [ ] AlphaZero
 
